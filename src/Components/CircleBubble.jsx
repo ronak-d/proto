@@ -7,17 +7,8 @@ const CircleBubble = () => {
   const [background, setBackground] = useState(null);
 
   function HandleBackground(e) {
-    console.log(e._reactName);
-    console.log(e.target);
-    console.log(e);
-
-    if (e._reactName == "onMouseEnter") {
-      setBackground(
-        "https://images.unsplash.com/photo-1542395975-d6d3ddf91d6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-      );
-    } else {
-      setBackground(null);
-    }
+    setBackground(e);
+    console.log("background", background);
   }
   return (
     <>
@@ -51,8 +42,14 @@ const CircleBubble = () => {
             <Link
               to="/"
               url="https:google.com"
-              onMouseEnter={HandleBackground}
-              onMouseLeave={HandleBackground}
+              onMouseEnter={() => {
+                HandleBackground(
+                  "https://images.unsplash.com/photo-1542395975-d6d3ddf91d6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                );
+              }}
+              onMouseLeave={() => {
+                HandleBackground("");
+              }}
             >
               <Box
                 className="boxEffect"
