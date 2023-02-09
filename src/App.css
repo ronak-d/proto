@@ -2,6 +2,13 @@
   background: pink;
 } */
 
+.canvas > * {
+  /* border: 10px solid black; */
+}
+.mesh:hover {
+  background: yellow;
+}
+
 h4 {
   text-align: center;
 }

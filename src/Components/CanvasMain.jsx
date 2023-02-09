@@ -6,18 +6,20 @@ import { BasicDepthPacking } from "three";
 const CanvasMain = () => {
   return (
     <>
-      <Canvas className="canvas">
+      <Canvas
+        // style={{ border: "2px solid red" }}
+        camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 5] }}
+        className="canvas"
+      >
         <CircleBubble />
       </Canvas>
       <h4>Digital Temple</h4>
 
       <div className="subBubbleHorizontal">
-        {/* <div> */}
         <Canvas className="canvasRow">
           <CircleBubble />
         </Canvas>
         {/* <h4>Digital Gandhara</h4> */}
-        {/* </div> */}
 
         <h6
           style={{
@@ -30,12 +32,10 @@ const CanvasMain = () => {
           Cognitive Mapping
         </h6>
 
-        {/* <div> */}
         <Canvas className="canvasRow">
           <CircleBubble />
         </Canvas>
         {/* <h4>China Builders</h4> */}
-        {/* </div> */}
       </div>
 
       <Canvas className="canvas">
@@ -47,3 +47,20 @@ const CanvasMain = () => {
 };
 
 export default CanvasMain;
+
+// single mesh from  circle bubble.jsx
+// {
+/* <mesh
+        style={{ border: "2px solid red" }}
+        onClick={(e) => console.log("clicked")}
+      >
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[-20, 50, 20]} intensity={1} />
+        <circleGeometry
+          style={{ border: "2px solid red" }}
+          attach="geometry"
+          args={[3]}
+        />
+        <meshLambertMaterial attach="material" color="grey" />
+      </mesh> */
+// }
